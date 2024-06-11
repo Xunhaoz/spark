@@ -45,19 +45,19 @@ length_weight = FMRegressor(featuresCol="scaler_features", labelCol="length_weig
 growth_rate_model = growth_rate.fit(data)
 length_weight_model = length_weight.fit(data)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_fm_regression"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_fm_regression"
-)
-
-growth_rate_model = FMRegressionModel.load(
-    "./models/growth_rate_fm_regression"
-)
-length_weight_model = FMRegressionModel.load(
-    "./models/length_weight_fm_regression"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_fm_regression"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_fm_regression"
+# )
+#
+# growth_rate_model = FMRegressionModel.load(
+#     "./models/growth_rate_fm_regression"
+# )
+# length_weight_model = FMRegressionModel.load(
+#     "./models/length_weight_fm_regression"
+# )
 
 growth_rate = growth_rate_model.transform(data)
 length_weight = length_weight_model.transform(data)

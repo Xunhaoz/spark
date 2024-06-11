@@ -46,19 +46,19 @@ length_weight = AFTSurvivalRegression(featuresCol="scaler_features", labelCol="l
 growth_rate_model = growth_rate.fit(data)
 length_weight_model = length_weight.fit(data)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_aft_survival_regression"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_aft_survival_regression"
-)
-
-growth_rate_model = AFTSurvivalRegressionModel.load(
-    "./models/growth_rate_aft_survival_regression"
-)
-length_weight_model = AFTSurvivalRegressionModel.load(
-    "./models/length_weight_aft_survival_regression"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_aft_survival_regression"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_aft_survival_regression"
+# )
+#
+# growth_rate_model = AFTSurvivalRegressionModel.load(
+#     "./models/growth_rate_aft_survival_regression"
+# )
+# length_weight_model = AFTSurvivalRegressionModel.load(
+#     "./models/length_weight_aft_survival_regression"
+# )
 
 growth_rate = growth_rate_model.transform(data)
 length_weight = length_weight_model.transform(data)

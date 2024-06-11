@@ -46,19 +46,19 @@ length_weight = DecisionTreeClassifier(featuresCol="scaler_features", labelCol="
 growth_rate_model = growth_rate.fit(data)
 length_weight_model = length_weight.fit(data)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_decision_tree_classifier"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_decision_tree_classifier"
-)
-
-growth_rate_model = DecisionTreeClassificationModel.load(
-    "./models/growth_rate_decision_tree_classifier"
-)
-length_weight_model = DecisionTreeClassificationModel.load(
-    "./models/length_weight_decision_tree_classifier"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_decision_tree_classifier"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_decision_tree_classifier"
+# )
+#
+# growth_rate_model = DecisionTreeClassificationModel.load(
+#     "./models/growth_rate_decision_tree_classifier"
+# )
+# length_weight_model = DecisionTreeClassificationModel.load(
+#     "./models/length_weight_decision_tree_classifier"
+# )
 
 growth_rate = growth_rate_model.transform(data)
 length_weight = length_weight_model.transform(data)

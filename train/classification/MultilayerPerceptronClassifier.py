@@ -50,19 +50,19 @@ length_weight = MultilayerPerceptronClassifier(
 growth_rate_model = growth_rate.fit(data)
 length_weight_model = length_weight.fit(data)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_multilayer_perceptron_classification_model"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_multilayer_perceptron_classification_model"
-)
-
-growth_rate_model = MultilayerPerceptronClassificationModel.load(
-    "./models/growth_rate_multilayer_perceptron_classification_model"
-)
-length_weight_model = MultilayerPerceptronClassificationModel.load(
-    "./models/length_weight_multilayer_perceptron_classification_model"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_multilayer_perceptron_classification_model"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_multilayer_perceptron_classification_model"
+# )
+#
+# growth_rate_model = MultilayerPerceptronClassificationModel.load(
+#     "./models/growth_rate_multilayer_perceptron_classification_model"
+# )
+# length_weight_model = MultilayerPerceptronClassificationModel.load(
+#     "./models/length_weight_multilayer_perceptron_classification_model"
+# )
 
 growth_rate = growth_rate_model.transform(data)
 length_weight = length_weight_model.transform(data)

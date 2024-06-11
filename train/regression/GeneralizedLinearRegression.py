@@ -45,19 +45,19 @@ length_weight = GeneralizedLinearRegression(featuresCol="scaler_features", label
 growth_rate_model = growth_rate.fit(data)
 length_weight_model = length_weight.fit(data)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_generalized_linear_regression"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_generalized_linear_regression"
-)
-
-growth_rate_model = GeneralizedLinearRegressionModel.load(
-    "./models/growth_rate_generalized_linear_regression"
-)
-length_weight_model = GeneralizedLinearRegressionModel.load(
-    "./models/length_weight_generalized_linear_regression"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_generalized_linear_regression"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_generalized_linear_regression"
+# )
+#
+# growth_rate_model = GeneralizedLinearRegressionModel.load(
+#     "./models/growth_rate_generalized_linear_regression"
+# )
+# length_weight_model = GeneralizedLinearRegressionModel.load(
+#     "./models/length_weight_generalized_linear_regression"
+# )
 
 growth_rate = growth_rate_model.transform(data)
 length_weight = length_weight_model.transform(data)

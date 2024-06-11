@@ -41,19 +41,19 @@ length_weight = KMeans(featuresCol="scaler_features", k=2)
 growth_rate_model = growth_rate.fit(data_X)
 length_weight_model = length_weight.fit(data_X)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_kmeans"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_kmeans"
-)
-
-growth_rate_model = KMeansModel.load(
-    "./models/growth_rate_kmeans"
-)
-length_weight_model = KMeansModel.load(
-    "./models/length_weight_kmeans"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_kmeans"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_kmeans"
+# )
+#
+# growth_rate_model = KMeansModel.load(
+#     "./models/growth_rate_kmeans"
+# )
+# length_weight_model = KMeansModel.load(
+#     "./models/length_weight_kmeans"
+# )
 
 growth_rate = growth_rate_model.transform(data_X)
 length_weight = length_weight_model.transform(data_X)

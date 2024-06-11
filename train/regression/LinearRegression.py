@@ -45,19 +45,19 @@ length_weight = LinearRegression(featuresCol="scaler_features", labelCol="length
 growth_rate_model = growth_rate.fit(data)
 length_weight_model = length_weight.fit(data)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_linear_regression"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_linear_regression"
-)
-
-growth_rate_model = LinearRegressionModel.load(
-    "./models/growth_rate_linear_regression"
-)
-length_weight_model = LinearRegressionModel.load(
-    "./models/length_weight_linear_regression"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_linear_regression"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_linear_regression"
+# )
+#
+# growth_rate_model = LinearRegressionModel.load(
+#     "./models/growth_rate_linear_regression"
+# )
+# length_weight_model = LinearRegressionModel.load(
+#     "./models/length_weight_linear_regression"
+# )
 
 growth_rate = growth_rate_model.transform(data)
 length_weight = length_weight_model.transform(data)

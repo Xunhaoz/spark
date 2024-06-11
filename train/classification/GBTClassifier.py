@@ -46,19 +46,19 @@ length_weight = GBTClassifier(featuresCol="scaler_features", labelCol="length_we
 growth_rate_model = growth_rate.fit(data)
 length_weight_model = length_weight.fit(data)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_gbt_classification"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_gbt_classification"
-)
-
-growth_rate_model = GBTClassificationModel.load(
-    "./models/growth_rate_gbt_classification"
-)
-length_weight_model = GBTClassificationModel.load(
-    "./models/length_weight_gbt_classification"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_gbt_classification"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_gbt_classification"
+# )
+#
+# growth_rate_model = GBTClassificationModel.load(
+#     "./models/growth_rate_gbt_classification"
+# )
+# length_weight_model = GBTClassificationModel.load(
+#     "./models/length_weight_gbt_classification"
+# )
 
 growth_rate = growth_rate_model.transform(data)
 length_weight = length_weight_model.transform(data)

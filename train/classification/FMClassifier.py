@@ -46,19 +46,19 @@ length_weight = FMClassifier(featuresCol="scaler_features", labelCol="length_wei
 growth_rate_model = growth_rate.fit(data)
 length_weight_model = length_weight.fit(data)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_fm_classifier"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_fm_classifier"
-)
-
-growth_rate_model = FMClassificationModel.load(
-    "./models/growth_rate_fm_classifier"
-)
-length_weight_model = FMClassificationModel.load(
-    "./models/length_weight_fm_classifier"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_fm_classifier"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_fm_classifier"
+# )
+#
+# growth_rate_model = FMClassificationModel.load(
+#     "./models/growth_rate_fm_classifier"
+# )
+# length_weight_model = FMClassificationModel.load(
+#     "./models/length_weight_fm_classifier"
+# )
 
 growth_rate = growth_rate_model.transform(data)
 length_weight = length_weight_model.transform(data)

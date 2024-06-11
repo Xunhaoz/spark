@@ -46,19 +46,19 @@ length_weight = LinearSVC(featuresCol="scaler_features", labelCol="length_weight
 growth_rate_model = growth_rate.fit(data)
 length_weight_model = length_weight.fit(data)
 
-growth_rate_model.write().overwrite().save(
-    "./models/growth_rate_linear_SVC"
-)
-length_weight_model.write().overwrite().save(
-    "./models/length_weight_linear_SVC"
-)
-
-growth_rate_model = LinearSVCModel.load(
-    "./models/growth_rate_linear_SVC"
-)
-length_weight_model = LinearSVCModel.load(
-    "./models/length_weight_linear_SVC"
-)
+# growth_rate_model.write().overwrite().save(
+#     "./models/growth_rate_linear_SVC"
+# )
+# length_weight_model.write().overwrite().save(
+#     "./models/length_weight_linear_SVC"
+# )
+#
+# growth_rate_model = LinearSVCModel.load(
+#     "./models/growth_rate_linear_SVC"
+# )
+# length_weight_model = LinearSVCModel.load(
+#     "./models/length_weight_linear_SVC"
+# )
 
 growth_rate = growth_rate_model.transform(data)
 length_weight = length_weight_model.transform(data)
